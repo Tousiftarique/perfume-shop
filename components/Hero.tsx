@@ -17,7 +17,7 @@ export default function Hero() {
           Discover Premium Fragrances
         </h1>
         <p className="text-lg md:text-xl text-gray-600 mb-10 font-light max-w-2xl mx-auto">
-          Experience the art of scent with our curated collection of world-class perfumes.
+          {/* Experience the art of scent with our curated collection of world-class perfumes. */}
         </p>
         <button className="bg-black text-white px-10 py-4 rounded-full text-sm font-medium hover:bg-gray-800 transition-all transform hover:scale-105 active:scale-95">
           Explore Collection

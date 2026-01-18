@@ -34,7 +34,7 @@ export default function ProductsPage() {
           </div>
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            {products.map((product: any) => (
+            {products.slice(0, 4).map((product: any) => (
               <ProductCard 
                 key={product.id} 
                 id={product.id}

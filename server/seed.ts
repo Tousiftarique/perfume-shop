@@ -56,18 +56,18 @@ const products = [
     sillage: 'Moderate',
     gender: 'Feminine'
   },
-  {
-    name: 'Citrus Bloom',
-    description: 'Energizing bergamot and orange blossom for a bright day. A refreshing burst of sunshine in a bottle.',
-    price: 85,
-    images: [
-      'https://images.unsplash.com/photo-1563170351-be82bc888bb4?auto=format&fit=crop&q=80&w=800'
-    ],
-    sizes: ['50ml', '100ml'],
-    longevity: '4-6 Hours',
-    sillage: 'Soft',
-    gender: 'Unisex'
-  }
+  // {
+  //   name: 'Citrus Bloom',
+  //   description: 'Energizing bergamot and orange blossom for a bright day. A refreshing burst of sunshine in a bottle.',
+  //   price: 85,
+  //   images: [
+  //     'https://forestoud.com/cdn/shop/files/3_226cba42-adfd-4043-b7f0-ea3c557900a7_600x600_crop_center.jpg?v=1761939621'
+  //   ],
+  //   sizes: ['50ml', '100ml'],
+  //   longevity: '4-6 Hours',
+  //   sillage: 'Soft',
+  //   gender: 'Unisex'
+  // }
 ];
 
 async function seed() {

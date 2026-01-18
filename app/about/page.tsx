@@ -11,13 +11,15 @@ export default function AboutPage() {
         <h1 className="text-4xl font-serif font-bold mb-8">Our Story</h1>
         <div className="prose prose-lg text-gray-600">
           <p className="mb-6">
-            Founded in 2024, ESSENCE was born from a passion for the transformative power of scent. We believe that a fragrance is more than just a smell—it's an identity, a memory, and an art form.
+           Founded in 2026, FRAGRANCE HUB was born from a deep passion for luxury fragrances and timeless elegance. We believe a scent has the power to define moments, evoke memories, and create unforgettable impressions.
+
+
           </p>
           <p className="mb-6">
-            Our master perfumers travel the globe to source the finest raw materials, from the rose fields of Bulgaria to the sandalwood forests of Mysore. Each bottle is a testament to our commitment to quality and craftsmanship.
+            Our perfumes are crafted using carefully selected ingredients and refined techniques to ensure sophistication, depth, and lasting quality in every bottle. 
           </p>
           <p>
-            We invite you to explore our collection and find the scent that speaks to your soul.
+           Step into the world of FRAGRANCE HUB and discover a signature fragrance that reflects your individuality.
           </p>
         </div>
       </div>

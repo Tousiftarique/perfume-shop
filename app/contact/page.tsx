@@ -13,7 +13,7 @@ export default function ContactPage() {
           <div>
             <h1 className="text-4xl font-serif font-bold mb-8">Get in Touch</h1>
             <p className="text-gray-600 mb-12">
-              Have questions about our fragrances or need help choosing the perfect scent? Our team is here to assist you.
+             Looking for your signature scent or need expert guidance? Connect with us and let FRAGRANCE HUB help you discover the perfect fragrance.
             </p>
             
             <div className="space-y-6">
@@ -23,7 +23,7 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <p className="text-xs font-bold text-gray-400 uppercase tracking-widest">Email</p>
-                  <p className="text-gray-900">concierge@essence.com</p>
+                  <p className="text-gray-900">ertousif49@gmail.com</p>
                 </div>
               </div>
               <div className="flex items-center gap-4">
@@ -32,7 +32,7 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <p className="text-xs font-bold text-gray-400 uppercase tracking-widest">Phone</p>
-                  <p className="text-gray-900">+1 (555) 000-0000</p>
+                  <p className="text-gray-900">+91 6204190723</p>
                 </div>
               </div>
               <div className="flex items-center gap-4">
@@ -41,7 +41,7 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <p className="text-xs font-bold text-gray-400 uppercase tracking-widest">Boutique</p>
-                  <p className="text-gray-900">123 Fragrance Way, New York, NY</p>
+                  <p className="text-gray-900">Hyderabad (Telangana) [India]</p>
                 </div>
               </div>
             </div>

@@ -43,15 +43,15 @@ VALUES
   'Moderate', 
   'Feminine'
 ),
-(
-  'Citrus Bloom', 
-  'Energizing bergamot and orange blossom for a bright day. A refreshing burst of sunshine in a bottle.', 
-  85, 
-  ARRAY['https://images.unsplash.com/photo-1563170351-be82bc888bb4?auto=format&fit=crop&q=80&w=800'], 
-  ARRAY['50ml', '100ml'], 
-  '4-6 Hours', 
-  'Soft', 
-  'Unisex'
-);
+-- (
+--   'Citrus Bloom', 
+--   'Energizing bergamot and orange blossom for a bright day. A refreshing burst of sunshine in a bottle.', 
+--   85, 
+--   ARRAY['https://forestoud.com/cdn/shop/files/3_226cba42-adfd-4043-b7f0-ea3c557900a7_600x600_crop_center.jpg?v=1761939621'], 
+--   ARRAY['50ml', '100ml'], 
+--   '4-6 Hours', 
+--   'Soft', 
+--   'Unisex'
+-- );
 
 COMMIT;

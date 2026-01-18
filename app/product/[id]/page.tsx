@@ -3,7 +3,7 @@
 import React, { useEffect, useState, use } from 'react';
 import Navbar from '@/components/Navbar';
 import { api } from '@/services/api';
-import { Star, ChevronLeft, ShoppingCart, ShieldCheck, Truck, RotateCcw } from 'lucide-react';
+import { Star, ChevronLeft, ShoppingCart, ShieldCheck, Truck, RotateCcw, Share } from 'lucide-react';
 import Link from 'next/link';
 
 export default function ProductDetail({ params }: { params: Promise<{ id: string }> }) {
@@ -62,6 +62,67 @@ export default function ProductDetail({ params }: { params: Promise<{ id: string
       console.error('Error posting review:', error);
     } finally {
       setSubmittingReview(false);
+    }
+  };
+
+  const handleShare = async () => {
+    const shareUrl = typeof window !== 'undefined' ? window.location.href : '';
+    const shareTitle = `Check out ${product.name}`;
+    const shareText = `I found this amazing perfume: ${product.name} - ${product.description}`;
+
+    // Try native share API first
+    if (navigator.share) {
+      try {
+        await navigator.share({
+          title: shareTitle,
+          text: shareText,
+          url: shareUrl,
+        });
+      } catch (error) {
+        console.error('Error sharing:', error);
+      }
+    } else {
+      // Fallback to social media share URLs
+      const encodedUrl = encodeURIComponent(shareUrl);
+      const encodedTitle = encodeURIComponent(shareTitle);
+      const encodedText = encodeURIComponent(shareText);
+
+      const shareOptions = {
+        twitter: `https://twitter.com/intent/tweet?text=${encodedText}&url=${encodedUrl}`,
+        facebook: `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`,
+        linkedin: `https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}`,
+        email: `mailto:?subject=${encodedTitle}&body=${encodedText}`,
+      };
+
+      // Create a simple menu for desktop users
+      const menuHTML = `
+        <div style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 1000; background: white; padding: 20px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); text-align: center;">
+          <p style="margin-bottom: 16px; font-weight: 600;">Share on</p>
+          <div style="display: flex; gap: 12px; flex-direction: column;">
+            <a href="${shareOptions.twitter}" target="_blank" style="padding: 10px; background: #1DA1F2; color: white; border-radius: 8px; text-decoration: none; font-size: 14px;">Twitter</a>
+            <a href="${shareOptions.facebook}" target="_blank" style="padding: 10px; background: #1877F2; color: white; border-radius: 8px; text-decoration: none; font-size: 14px;">Facebook</a>
+            <a href="${shareOptions.linkedin}" target="_blank" style="padding: 10px; background: #0A66C2; color: white; border-radius: 8px; text-decoration: none; font-size: 14px;">LinkedIn</a>
+            <a href="${shareOptions.email}" style="padding: 10px; background: #EA4335; color: white; border-radius: 8px; text-decoration: none; font-size: 14px;">Email</a>
+          </div>
+        </div>
+        <div style="position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index: 999; background: rgba(0,0,0,0.5);" id="shareMenuBackdrop"></div>
+      `;
+
+      const tempDiv = document.createElement('div');
+      tempDiv.innerHTML = menuHTML;
+      document.body.appendChild(tempDiv);
+
+      // Remove menu when clicking backdrop
+      document.getElementById('shareMenuBackdrop')?.addEventListener('click', () => {
+        tempDiv.remove();
+      });
+
+      // Remove menu after 10 seconds
+      setTimeout(() => {
+        if (document.body.contains(tempDiv)) {
+          tempDiv.remove();
+        }
+      }, 10000);
     }
   };
 
@@ -130,6 +191,13 @@ export default function ProductDetail({ params }: { params: Promise<{ id: string
                   ))}
                   <span className="ml-2 text-sm text-gray-500">({reviews.length} reviews)</span>
                 </div>
+                <button
+                  onClick={handleShare}
+                  className="p-2 bg-gray-50 hover:bg-gray-100 rounded-full transition-colors"
+                  title="Share this product"
+                >
+                  <Share className="w-5 h-5 text-gray-600 hover:text-black" />
+                </button>
               </div>
               <h1 className="text-4xl md:text-5xl font-serif font-bold text-gray-900 mb-4">{product.name}</h1>
               <p className="text-2xl font-medium text-gray-900">${product.price}</p>
@@ -188,7 +256,7 @@ export default function ProductDetail({ params }: { params: Promise<{ id: string
               </div>
               <div className="text-center">
                 <RotateCcw className="w-5 h-5 mx-auto mb-2 text-gray-400" />
-                <p className="text-[10px] font-medium text-gray-500">30-Day Returns</p>
+                <p className="text-[10px] font-medium text-gray-500">7-Day Returns</p>
               </div>
             </div>
           </div>

@@ -47,7 +47,7 @@ export default function Home() {
           </div>
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8">
-            {products.map((product: any) => (
+            {products.slice(0, 4).map((product: any) => (
               <ProductCard 
                 key={product.id} 
                 id={product.id}
@@ -63,7 +63,7 @@ export default function Home() {
 
       <footer className="bg-gray-50 border-t border-gray-100 py-12">
         <div className="max-w-7xl mx-auto px-4 text-center">
-          <p className="text-gray-400 text-sm">© 2024 ESSENCE Perfumery. All rights reserved.</p>
+          <p className="text-gray-400 text-sm">© 2026 ESSENCE Perfumery. Designed & Developed by Tousif Tarique</p>
         </div>
       </footer>
     </main>

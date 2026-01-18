@@ -13,7 +13,7 @@ export default function Navbar() {
         <div className="flex justify-between h-16 items-center">
           <div className="flex-shrink-0 flex items-center">
             <Link href="/" className="text-2xl font-serif font-bold tracking-tighter text-gray-900">
-              ESSENCE
+              FRAGRANCE HUB
             </Link>
           </div>
           
