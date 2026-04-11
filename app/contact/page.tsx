@@ -32,7 +32,7 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <p className="text-xs font-bold text-gray-400 uppercase tracking-widest">Phone</p>
-                  <p className="text-gray-900">+91 6204190723</p>
+                  <p className="text-gray-900">+91 1234567890</p>
                 </div>
               </div>
               <div className="flex items-center gap-4">
